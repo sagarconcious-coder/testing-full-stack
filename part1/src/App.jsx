@@ -4,7 +4,9 @@ const App = () => {
   const [notes, setNotes] = useState([]);
 
   const fetchNotes = async () => {
-    const response = await fetch("http://localhost:3000/notes");
+    const response = await fetch(
+      "https://testing-full-stack.onrender.com/notes",
+    );
     const data = await response.json();
     console.log(data, typeof data);
 

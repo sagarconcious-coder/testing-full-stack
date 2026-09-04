@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const path = require("path");
 const notes = [
   { id: 1, title: "Buy groceries", content: "Milk, eggs, bread" },
   { id: 2, title: "Meeting notes", content: "Discuss Q3 roadmap" },
@@ -9,6 +9,7 @@ const notes = [
 const app = express();
 
 // MIDDLEWARE
+app.use(express.static(path.join(__dirname, "dist")));
 app.use(express.json());
 app.use(cors());
 
